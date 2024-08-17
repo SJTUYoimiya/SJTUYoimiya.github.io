@@ -1,0 +1,17 @@
+$title: '{{ site.title }}';
+$favicon: '{{ site.favicon }}';
+
+// background
+$background-color: #0086D119;
+$image-banner: url('/assets/images/banner.png');
+
+//font
+$font-family-main: 'PingFangSC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-monospace: 'JetbrainsMono', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+// color
+$color-midnight: #303640;
+$color-starlight: #EEE5D4;
+$color-silver: #E3E4E6;
+$color-space-gray: #7D7E80;
+$color-space-black: #2C2E2F;

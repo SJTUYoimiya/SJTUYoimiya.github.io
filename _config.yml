@@ -1,0 +1,36 @@
+title: "五洲湖底"
+favicon: "/assets/images/favicon.png"
+
+# author information
+author:
+  name: "Yoimiya"
+  email: "sjtuwzh@gmail.com"
+  github: "SJTUYoimiya"
+  shuiyuan: "Yoimiya"
+
+description: "去把这个不完美的故事，变成我们所期望的样子！"
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+collections:
+  authors:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"

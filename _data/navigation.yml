@@ -1,0 +1,8 @@
+- name: 主页
+  link: /
+- name: 文章
+  link: /blog.html
+- name: 标签
+  link: /staff.html
+- name: 关于
+  link: /about.html

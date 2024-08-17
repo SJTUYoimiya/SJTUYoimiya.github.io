@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <div class="site-brand">
+    <a href="/">
+      <img class="site-favicon" title="{{site.title}}" src="{{site.favicon}}"></img>
+      {{ site.title }}
+    </a>
+  </div>
+  <div class="header-navigator">
+    {% for item in site.data.navigation %}
+      <a href="{{ item.link }}" {% if page.url == item.link %} class="header-current" {% endif %}>{{item.name}}</a>
+    {% endfor %}
+  </div>
+</nav>
