@@ -1,18 +1,28 @@
-# ideas
-## 学术主页
+## 网站结构
 
-To be continued
+### 学术主页
 
-## Coding & Tools
+To be continued...
+
+### Coding & Tools
 
 - 科学计算&机器学习
-- iOS开发
+- iOS 开发
 - Python、命令行等学习记录 etc.
-- 其他相关
 
-## 日记
+添加 tag 以便索引，放在目录 sidebar 中
+
+### 日记
 
 - 摄影日记
 - 心情记录
 - 周边探索
 - 交大日常
+
+## 新增功能 To do list
+
+- 深色模式
+- 返回顶部按钮
+- **文章**界面: 在右侧添加相关内容or链接；字数统计
+- **关于**界面完善
+- css结构优化
