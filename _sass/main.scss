@@ -31,6 +31,7 @@ main {
 
 .navbar a {
     color:black;                  /* 超链接颜色 */
+    mix-blend-mode: difference;     /* 混合模式 */
     text-decoration: none;          /* 去掉下划线 */
 }
 

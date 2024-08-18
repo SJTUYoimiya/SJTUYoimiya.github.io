@@ -1,4 +1,10 @@
 - name: 首页
   link: /
+- name: 学术
+  link: https://www.bilibili.com/video/BV1GJ411x7h7/?share_source=copy_web&vd_source=dbe13ea2a45e5a2170e8954987f9a76f
+- name: 文章
+  link: /posts.html
+- name: 日记
+  link: /diary.html
 - name: 关于
   link: /about.html
