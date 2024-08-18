@@ -1,30 +1,56 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "测试文档"
 date:   2024-08-17 11:56:11 +0800
 collection: posts
-category: Jekyll
+category: Test
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+# 一级标题
 
-Jekyll requires blog post files to be named according to the following format:
+## 二级标题
 
-`YEAR-MONTH-DAY-title.MARKUP`
+### 三级标题
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+#### 四级标题
 
-Jekyll also offers powerful support for code snippets:
+##### 五级标题
+
+###### 六级标题
+
+**加粗**， *斜体*， ***加粗斜体***， ~~删除线~~， `code`， [链接](https://www.github.com)
+
+1. 有序列表
+  - 嵌套列表
+  - 嵌套列表
+2. 有序列表
+3. 有序列表
+
+- 无序列表
+- 无序列表
+- 无序列表
+
+> 引用
+> 引用
 
 ```python
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+import os
+print('Hello, World!')
 ```
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+行内 $ \mathrm{e} $ 公式
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+$$
+\mathrm{e}^{\mathrm{i} \pi} + 1 = 0
+$$
+
+![图片](https://www.github.com/favicon.ico)
+
+一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本
+
+一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本一大段文本
+
+| 表头1 | 表头2 | 表头3 |
+| --- | --- | --- |
+| 内容1 | 内容2 | 内容3 |
+| 内容4 | 内容5 | 内容6 |
+| 内容7 | 内容8 | 内容9 |
