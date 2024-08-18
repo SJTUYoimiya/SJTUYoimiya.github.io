@@ -17,15 +17,91 @@ main {
 }
 
 a {
-    color: $color-black-titanium;
+    color: $color-sjtu-gold;
     text-decoration: none;
 }
 
 .wrapper {
-    max-width: 1080px;
+    max-width: 1440px;
     margin: auto;
     padding-left: 30px;
     padding-right: 30px
+}
+
+.content {
+    line-height: 1.6;
+    text-align: justify;
+    word-wrap: normal;
+    font-feature-settings: "liga" 0, "clig" 0;
+    -webkit-font-feature-settings: "liga" 0, "clig" 0;
+    -moz-font-feature-settings: "liga" 0, "clig" 0;
+}
+
+.content h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.content h2 {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.content h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.content h4 {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.content h5 {
+    font-size: 1em;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.content h6 {
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.content p {
+    margin: 1em 0;
+    text-indent: 2em;
+}
+
+.content code {
+    font-family: $font-family-monospace;
+    font-size: 0.9em;
+    // border: solid 1px $color-midnight;
+    border-radius: 4px;
+    background-color: $color-starlight;
+    padding: 0 4px;
+    margin: 0 2px;
+}
+
+strong {
+    font-weight: 600;
 }
 
 /* 设置导航栏的整体布局 */
@@ -62,6 +138,10 @@ a {
     font-weight: bold; /* 加粗字体 */
 }
 
+.site-brand a {
+    color: $color-black-titanium; /* 标题颜色 */
+}
+
 .site-favicon {
     height: 30px;           /* 图标高度 */
     margin-right: 10px;     /* 图标与标题之间的距离 */
@@ -70,6 +150,7 @@ a {
 
 // 设置导航栏标签样式
 .header-navigator a {
+    color: $color-black-titanium;
     margin-left: 15px; /* 每个标签之间的距离 */
 }
 
@@ -82,6 +163,49 @@ a {
     font-weight: bold; /* 当前标签加粗 */
 }
 
+// /* 针对拥有语言标识的代码块，使用::before伪元素 */
+// div[class*="language-"]::before {
+//     content: attr(class);
+//     content: attr(class);
+//     // content: attr(class).replace('language-', '').replace(' highlighter-rouge', '') " Code";
+//     display: block;
+//     text-transform: capitalize;
+//     background: #333;
+//     color: #fff;
+//     font-size: 0.85em;
+//     padding: 0.2em 0.6em;
+//     border-radius: 4px 4px 0 0;
+//     margin-bottom: -1px;
+//   }
+  
+/* 针对整体代码块样式 */
+div[class*="language-"] {
+    margin: 1em 0;
+    border: 1px solid $color-silver;
+    border-radius: 8px;
+    padding: 0;
+    background-color: $color-starlight;
+}
+
+// div[class*="language-"]::before {
+//     content: attr(class);
+// }
+
+/* CSS样式 */
+pre code {
+    padding: 10px;
+    display: block;
+    overflow-x: auto;
+}
+  
+/* 选择pre标签设置整体样式 */
+pre {
+    margin: 0;
+    padding: 0.5em;
+    // border-top: 1px solid $color-sjtu-gold;
+}
+  
+
 // 设置footer的样式
 footer {
     background-color: #B5B5B645;
@@ -92,11 +216,6 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: left;
-}
-
-.footer-content a {
-    color: #BD9F68;
-    text-decoration: none;
 }
 
 .footer-icon {
