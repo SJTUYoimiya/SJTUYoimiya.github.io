@@ -1,57 +1,97 @@
 body {
-    margin: 0;
+    position: relative;
+    min-height: 100%;
+    top: 0;
+    margin: auto;
     padding: 0;
     font-family: $font-family-main;
 }
 
-.site-main {
+main {
     padding: 0;
 }
 
-.banner {
-    background-image: $image-banner;
-    background-size: cover;         /* 图片覆盖整个banner区域 */
-    background-position: right-top; /* 图片居中显示 */
-    width: 100%;                    /* 设置banner宽度为100%，适应页面宽度 */
-    padding-bottom: 720px;          /* 设置高度为宽度的30%，保持等比缩放 */
-    position: relative;
-    text-align: left;               /* 左对齐 */
+.wrapper {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 30px;
+    padding-right: 30px
 }
 
-/* 添加一个半透明的背景覆盖层 */
-.banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* 半透明黑色 */
-    z-index: 1;                             /* 保证覆盖层在内容后面 */
+/* 设置导航栏的整体布局 */
+.navbar {
+    position: relative;                /* 固定在页面顶部 */
+    top: 0;                         /* 距离页面顶部0像素 */
+    width: 100%;                    /* 宽度100% */
+    z-index: 1000;                  /* z轴层级 */
+    background-color:transparent;   /* 导航栏背景颜色 */
+    transition: background-color 0.3s ease; /* 背景颜色变化动画 */
+    
+}
+
+.navbar a {
+    color:black;                  /* 超链接颜色 */
+    text-decoration: none;          /* 去掉下划线 */
+}
+
+.navbar.scrolled {
+    background-color: #FFFFFF;    /* 滚动后的背景颜色 */
+}
+
+.navbar>:first-child {
+    padding: 20px;                  /* 上下左右内边距 */
+    display: flex;
+    justify-content: space-between; /* 左右两边对齐 */
+    align-items: center;            /* 垂直居中对齐 */
+    font-size: 1em;                /* 标题字号 */
+}
+
+/* 设置网站logo与标题样式 */
+.site-brand {
+    display: flex;
+    align-items: center;
+    font-weight: bold; /* 加粗字体 */
+}
+
+.site-favicon {
+    height: 30px;           /* 图标高度 */
+    margin-right: 10px;     /* 图标与标题之间的距离 */
+    vertical-align: middle; /* 垂直居中 */
+}
+
+// 设置导航栏标签样式
+.header-navigator a {
+    margin-left: 15px; /* 每个标签之间的距离 */
+}
+
+/* 设置超链接在悬停时的样式 */
+.header-navigator a:hover {
+    text-decoration: underline; /* 鼠标悬停时显示下划线 */
   }
 
-.banner-content {
-    position: absolute;     /* 绝对定位 */
-    top: 40%;               /* 垂直居中 */
-    width: 75%;
-    margin: auto;
-    padding: 0 30px;        /* 可选，增加一些左右内边距 */
-    justify-content: left;  /* 水平居中内容 */
-    align-items: center;    /* 垂直居中内容 */
-    z-index: 2;             /* 保证内容在覆盖层前面 */
+.header-current {
+    font-weight: bold; /* 当前标签加粗 */
 }
 
-/* 调整内容的样式 */
-.banner-content h1 {
-    font-size: 3vw; /* 使用vw确保字体大小相对于视口宽度缩放 */
-    margin: 0 0 10px;
-    font-weight: 700;
-    color: $color-starlight;
+// 设置footer的样式
+footer {
+    background-color: #B5B5B645;
+    margin: 0;
+    margin-top: 60px;
+    padding: 40px 40px 30px 30px;
+    font-size: 0.75em;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
 }
 
-.banner-content h2 {
-    font-size: 1.5vw;
-    font-weight: 400;
-    color: $color-starlight;
-    margin: 0 0 20px;
+.footer-content a {
+    color: #BD9F68;
+    text-decoration: none;
 }
+
+.footer-icon {
+    height: 18px;
+    vertical-align: middle;
+}
+

@@ -1,23 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="icon" href="{{ site.favicon }}" type="image/png">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    {% feed_meta %}
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+    <!-- <script src="{{ '/assets/js/main.js' | relative_url }}"></script> -->
     {% seo %}
   </head>
-  <body>
-    <header id="site-header">
-      {% include navigation.html %}
+  <body class="{{ page.class }}">
+    <header>
+      {% include navbar.html %}
     </header>
     
-    <main id="site-main" class="site-main">
+    <main>
       {{ content }}
     </main>
 
-    <footer id="site-footer">
+    <footer>
       {% include footer.html %}
     </footer>
   </body>
