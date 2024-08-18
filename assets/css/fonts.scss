@@ -56,4 +56,18 @@
     font-style: normal;
     src: url('/assets/fonts/PingfangSC/PingFangSC-Semibold.ttf') format('truetype');
 }
-  
+
+/* San Francisco Pro */
+@font-face {
+    font-family: 'SFPro';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/assets/fonts/SFPro/SF-Pro.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SFPro';
+    font-weight: 400;
+    font-style: italic;
+    src: url('/assets/fonts/SFPro/SF-Pro-Italic.ttf') format('truetype');
+}
