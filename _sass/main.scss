@@ -5,10 +5,20 @@ body {
     margin: auto;
     padding: 0;
     font-family: $font-family-main;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.6;
+    color: $color-black-titanium;
+    background-color: $color-white-titanium;
 }
 
 main {
     padding: 0;
+}
+
+a {
+    color: $color-black-titanium;
+    text-decoration: none;
 }
 
 .wrapper {
@@ -20,7 +30,7 @@ main {
 
 /* 设置导航栏的整体布局 */
 .navbar {
-    position: relative;                /* 固定在页面顶部 */
+    position: relative;             /* 固定在页面顶部 */
     top: 0;                         /* 距离页面顶部0像素 */
     width: 100%;                    /* 宽度100% */
     z-index: 1000;                  /* z轴层级 */
@@ -30,9 +40,7 @@ main {
 }
 
 .navbar a {
-    color:black;                  /* 超链接颜色 */
     mix-blend-mode: difference;     /* 混合模式 */
-    text-decoration: none;          /* 去掉下划线 */
 }
 
 .navbar.scrolled {
