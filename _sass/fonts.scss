@@ -1,73 +1,46 @@
+/* Apple 苹方 */
+@font-face {
+    font-family: 'Yoimiya';
+    font-weight: 400;
+    font-style: normal;
+    src: url('assets/fonts/PingFangSC-Regular.woff2') format('woff2');
+    font-display: swap;
+}
+
 /* Jetbrains Mono NL */
 @font-face {
     font-family: 'JetBrains Mono';
     font-weight: 400;
     font-style: normal;
-    src: url('/assets/fonts/JetbrainsMono/JetBrainsMonoNL-Regular.ttf') format('truetype');
+    src: url('assets/fonts/JetbrainsMono/JetBrainsMono-Regular.woff2') format('woff2');
+    font-display: swap;
 }
-
 
 @font-face {
     font-family: 'JetBrains Mono';
     font-weight: 400;
     font-style: italic;
-    src: url('/assets/fonts/JetbrainsMono/JetBrainsMonoNL-Italic.ttf') format('truetype');
+    src: url('assets/fonts/JetbrainsMono/JetBrainsMono-Italic.woff2') format('woff2');
+    font-display: swap;
 }
 
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-weight: 700;
-    font-style: normal;
-    src: url('/assets/fonts/JetbrainsMono/JetBrainsMonoNL-Bold.ttf') format('truetype');
-}
-  
 @font-face {
     font-family: 'JetBrains Mono';
     font-weight: 700;
+    font-style: normal;
+    src: url('assets/fonts/JetbrainsMono/JetBrainsMono-Bold.woff2') format('woff2');
+    font-display: swap;
+}
+  
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-weight: 700;
     font-style: italic;
-    src: url('/assets/fonts/JetbrainsMono/JetBrainsMonoNL-BoldItalic.ttf') format('truetype');
-}
-  
-/* Apple 苹方 */
-@font-face {
-    font-family: 'PingFang SC';
-    font-weight: 300;
-    font-style: normal;
-    src: url('/assets/fonts/PingfangSC/PingFangSC-Light.ttf') format('truetype');
-}
-  
-@font-face {
-    font-family: 'PingFang SC';
-    font-weight: 400;
-    font-style: normal;
-    src: url('/assets/fonts/PingfangSC/PingFangSC-Regular.ttf') format('truetype');
-}
-  
-@font-face {
-    font-family: 'PingFang SC';
-    font-weight: 500;
-    font-style: normal;
-    src: url('/assets/fonts/PingfangSC/PingFangSC-Medium.ttf') format('truetype');
-}
-  
-@font-face {
-    font-family: 'PingFang SC';
-    font-weight: 600;
-    font-style: normal;
-    src: url('/assets/fonts/PingfangSC/PingFangSC-Semibold.ttf') format('truetype');
+    src: url('assets/fonts/JetbrainsMono/JetBrainsMono-BoldItalic.woff2') format('woff2');
+    font-display: swap;
 }
 
-/* San Francisco Pro */
-@font-face {
-    font-family: 'SF Pro';
-    font-weight: 400;
-    font-style: normal;
-    src: url('/assets/fonts/SFPro/SF-Pro.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'SF Pro';
-    font-weight: 400;
-    font-style: italic;
-    src: url('/assets/fonts/SFPro/SF-Pro-Italic.ttf') format('truetype');
+:root {
+    --font-family-main: var('Yoimiya', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", 'Helvetica Neue', Helvetica, Arial, sans-serif);
+    --font-family-monospace: var('Jetbrains Mono', 'Jetbrains Mono NL', ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace)
 }

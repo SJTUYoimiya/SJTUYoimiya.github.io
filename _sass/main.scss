@@ -16,9 +16,9 @@
 }
 
 body {
-    background-color: (var(--background-color));
+    background-color: var(--background-color);
     margin: 0;
-    font-family: $font-family-main;
+    font-family: var(--font-family-main);
     font-size: 16px;
     line-height: 1.6;
     color: var(--text-color);
@@ -81,7 +81,7 @@ p {
 }
 
 code {
-    font-family: $font-family-monospace;
+    font-family: var(--font-family-monospace);
     font-size: 0.9em;
     border: solid 1px var(--border-color);
     border-radius: 4px;
