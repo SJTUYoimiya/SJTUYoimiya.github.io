@@ -3,7 +3,7 @@
     font-family: 'Yoimiya';
     font-weight: 400;
     font-style: normal;
-    src: url('assets/fonts/PingFangSC-Regular.woff2') format('woff2');
+    src: url('/assets/fonts/PingFangSC-Regular.woff2') format('woff2');
     font-display: swap;
 }
 
@@ -12,7 +12,7 @@
     font-family: 'JetBrains Mono';
     font-weight: 400;
     font-style: normal;
-    src: url('assets/fonts/JetbrainsMono/JetBrainsMono-Regular.woff2') format('woff2');
+    src: url('/assets/fonts/JetbrainsMono/JetBrainsMono-Regular.woff2') format('woff2');
     font-display: swap;
 }
 
@@ -20,7 +20,7 @@
     font-family: 'JetBrains Mono';
     font-weight: 400;
     font-style: italic;
-    src: url('assets/fonts/JetbrainsMono/JetBrainsMono-Italic.woff2') format('woff2');
+    src: url('/assets/fonts/JetbrainsMono/JetBrainsMono-Italic.woff2') format('woff2');
     font-display: swap;
 }
 
@@ -28,7 +28,7 @@
     font-family: 'JetBrains Mono';
     font-weight: 700;
     font-style: normal;
-    src: url('assets/fonts/JetbrainsMono/JetBrainsMono-Bold.woff2') format('woff2');
+    src: url('/assets/fonts/JetbrainsMono/JetBrainsMono-Bold.woff2') format('woff2');
     font-display: swap;
 }
   
@@ -36,11 +36,11 @@
     font-family: 'JetBrains Mono';
     font-weight: 700;
     font-style: italic;
-    src: url('assets/fonts/JetbrainsMono/JetBrainsMono-BoldItalic.woff2') format('woff2');
+    src: url('/assets/fonts/JetbrainsMono/JetBrainsMono-BoldItalic.woff2') format('woff2');
     font-display: swap;
 }
 
 :root {
-    --font-family-main: var('Yoimiya', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", 'Helvetica Neue', Helvetica, Arial, sans-serif);
-    --font-family-monospace: var('Jetbrains Mono', 'Jetbrains Mono NL', ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace)
+    --font-family-main: 'Yoimiya', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-family-monospace: 'Jetbrains Mono', 'Jetbrains Mono NL', ui-monospace, 'SFMono-Regular', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
 }
