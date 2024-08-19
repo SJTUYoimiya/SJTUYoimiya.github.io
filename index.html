@@ -4,17 +4,44 @@ title: 主页
 class: home
 ---
 <section class="banner">
-    <div class="banner-background">
+    <div class="background">
         <div style="background-image: url('/assets/images/banner.png');"></div>
     </div>
     <div class="wrapper">
-        <div class="banner-content-inner">
-            <div>
-                <h1>{{site.title}}</h1>
-                <p>{{site.description}}</p>
-            </div>
+        <div>
+            <h1>{{site.title}}</h1>
+            <p>{{site.description}}</p>
         </div>
     </div>
 </section>
-
-<span style="color: var(--text-color);">测试文本1</span> <span style="color: var(--muted-text-color);">测试文本2</span>
+<div class="wrapper">
+{% capture framework_content %}
+    <ul>
+        {% assign all_entries = site.posts | concat: site.diaries %}
+        {% assign sorted_entries = all_entries | sort: "date" | reverse %}
+        {% for entry in sorted_entries %}
+        <li><a href="{{ entry.url }}">
+            <h3>{{ entry.title }}</h3>
+            <p class="post-meta">
+                <span>{{ entry.date | date: "%Y-%m-%d" }}</span>
+                <span>
+                    {% assign collection_name = site.data.collections[entry.name] %}
+                    {{ collection_name }}
+                </span>
+                <span>{{ entry.category }}</span>
+            </p>
+            <p class="post-excerpt">{{ entry.excerpt | strip_html | truncatewords: 30}}</p>
+        </a></li>
+        {% endfor %}
+    </ul>
+{% endcapture %}
+{% capture sidebar_content %}
+    <ul>
+        <a href="/posts"><li>
+            <strong>文章</strong>
+            <span>{{ site.posts | size }}</span>
+        </li></a>
+    </ul>
+{% endcapture %}
+{% include framework.html %}
+</div>

@@ -4,36 +4,33 @@ layout: default
 {% assign posts_by_year = site[page.collection] | group_by_exp:"post", "post.date | date: '%Y'" %}
 
 <div class="wrapper">
-    <div class="framework">
-        <section class="post-list">
-        {% for year in posts_by_year %}
-            <ul class="post-list-yearly" id="post-list-{{ year.name }}">
-                <h2>{{ year.name }}</h2>
-                {% for post in year.items %}
-                    <li>
-                        <span class="post-meta">{{ post.date | date: "%b %d" }}</span>
-                        <a href="{{ post.url }}">{{ post.title }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        {% endfor %}</section>
-
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <ul class="yearly-stats">
+{% capture framework_content %}
+    {% for year in posts_by_year %}
+        <ul id="archive-{{ year.name }}">
+            <h3>{{ year.name }}</h3>
+            {% for post in year.items %}
                 <li>
-                    <a href="/posts.html">
-                        All
-                        <span>{{ site[page.collection] | size }}</span>
-                    </a>
+                    <span class="post-meta">{{ post.date | date: "%b %d" }}</span>
+                    <a href="{{ post.url }}">{{ post.title }}</a>
                 </li>
-                {% for year in posts_by_year %}
-                    <li><a href="#post-list-{{ year.name }}">
-                        {{ year.name }}
-                        <span>{{ year.items | size }}</span>
-                    </a></li>
-                {% endfor %}
-            </ul>
-        </aside>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endcapture %}
+{% capture sidebar_content %}
+    <ul>
+        <a href="/posts.html"><li>
+            <strong>全部</strong>
+            <span>{{ site[page.collection] | size }}</span>
+        </li></a>
+        {% for year in posts_by_year %}
+            <a href="#post-list-{{ year.name }}"><li>
+                <span>{{ year.name }}</span>
+                <span>{{ year.items | size }}</span>
+            </li></a>
+        {% endfor %}
+    </ul>
+{% endcapture %}
+{% include framework.html %}
     </div>
 </div>

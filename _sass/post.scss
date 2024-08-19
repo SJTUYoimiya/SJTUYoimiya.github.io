@@ -1,58 +1,19 @@
 .content {
     flex: 1;
     max-width: 1080px;
-}
-
-/* back-to-menu-button */
-.back-to-menu-button {
-    display: inline-flex;
-    align-items: center;
-    margin: 0;
-    margin-top: 16px;
-    border: none;
-    padding: 10px 15px;
-    background-color: transparent;
-    color: $color-space-gray;
-    text-decoration: none;
-}
-
-.back-to-menu-button:hover {
-    color: $color-space-black;
-}
-
-.back-to-menu-button::before {
-    content: '􀆉';
-    margin-right: 8px;
-    font-family: 'SFPro', sans-serif;
-    font-size: 20px;
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
+    margin: auto;
 }
 
 /* header */
 .post-header {
-    border-bottom: solid 1.2px $color-silver;
-    padding-bottom: 20px;
-    margin-bottom: 60px;
-}
-
-.post-header h1 {
+    margin-bottom: 80px;
     text-align: center;
-    font-size: 2.5em;
-    font-weight: 700;
-    margin-top: 0;
-    margin-bottom: 0.5em;
 }
 
 .post-header .post-meta {
-    display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 0.9em;
-    margin: 0;
-    margin-bottom: 30px;
 }
+
 .post-header .post-meta > * {
     padding: 0 20px;
 }
@@ -60,14 +21,38 @@
 .post-header .post-meta time::before {
     content: '􀉉';
     margin-right: 8px;
-    font-family: 'SFPro', sans-serif;
+    font-family: 'SF Pro', sans-serif;
     margin-right: 3px;
 }
 
-.catagory {
-    border-left: solid 1.2px $color-silver;
-    border-right: solid 1.2px $color-silver;
+.post-header .post-meta >*:last-child:before {
+    content: '􀐱';
+    margin-right: 8px;
+    font-family: 'SF Pro', sans-serif;
+    margin-right: 3px;
+}
+
+.post-header button {
     display: flex;
-    justify-content: center;
     align-items: center;
+    border: none;
+    padding: 20px 18px;
+    background-color: transparent;
+    height: 1.5em;
+    color: var(--muted-text-color);
+    text-decoration: none;
+}
+
+.post-header button:hover {
+    color: var(--button-hover-color);
+}
+
+.post-header button::before {
+    content: '􀆉';
+    margin-right: 8px;
+    font-family: 'SF Pro', sans-serif;
+    font-size: 1.2em;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
 }

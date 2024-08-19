@@ -3,14 +3,16 @@
     --text-color: #454545;
     --light-text-color: #DCDCDC;
     --muted-text-color: #7D7E80;
+    --ego-color: #EEE5D4;
     --primary-color: #BD9F68;
     --secondary-color: #B5B5B6;
     --card-background-color: #E3E4E6;
     --border-color: #E8EAED;
+    --box-border-color: #E3E4E6;
     --darker-border-color: #303640;
     --link-color: var(--primary-color);
     --button-hover-color: #303640;
-    --text-shadow-color: rgba(0, 0, 0, 0.2); /* 浅黑色文本阴影 */
+    --text-shadow-color: rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -26,18 +28,10 @@ body {
     text-align: justify;
 }
 
-main {
-    max-width: 1440px;
-    margin: auto;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 72px;
-}
-
 h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
     margin-top: 1em;
     margin-bottom: 0.5em;
+    font-weight: bold;
 }
 
 h1, h2, h3 {
@@ -133,6 +127,27 @@ td, th {
     vertical-align: middle;
 }
 
+.wrapper {
+    margin: auto;
+    padding: 30px;
+    max-width: 1440px;
+}
+
+.framework {
+    margin: 60px 0;
+    padding: 0;
+    display: flex;
+    max-width: 1440px;
+}
+
+main {
+    max-width: 1440px;
+    margin: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 74px;
+}
+
 /* header */
 header {
     position: fixed;
@@ -163,6 +178,10 @@ header nav>:first-child {
     font-weight: bold;
 }
 
+.site-brand a:hover {
+    text-decoration: none;
+}
+
 header img {
     height: 32px;
     margin-right: 5px;
@@ -177,7 +196,7 @@ header .current {
     font-weight: bold;
 }
 
-// 设置footer的样式
+/* footer */
 footer {
     background-color: transparent;
     margin: 60px 10px 0 10px;
@@ -193,4 +212,25 @@ footer p {
 footer img {
     height: 1.5em;
     vertical-align: middle;
+}
+
+/* post meta */
+.post-meta {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.post-meta > * {
+    margin: 0;
+    border-left: 1px solid var(--muted-text-color);
+    padding: 0 0.5em;
+    display: flex;
+    align-items: center;
+    height: 1em;
+}
+
+.post-meta > *:first-child {
+    border-left: none;
+    padding-left: 0;
 }

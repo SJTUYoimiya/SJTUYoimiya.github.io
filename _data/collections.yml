@@ -1,0 +1,8 @@
+- name: posts
+  label: '文章'
+  url: '/posts'
+  collection: site.posts
+- name: diaries
+  label: '日记'
+  url: '/diaries'
+  collection: site.diaries
