@@ -1,0 +1,42 @@
+{{ define "main" }}
+<section class="w-full bg-transparent mb-16">
+    <div class="relative isolate overflow-hidden">
+        <img src="/images/homepage/banner.webp" alt="" class="absolute inset-0 -z-10 size-full object-cover">
+        <div class="absolute inset-0 -z-10 block bg-white/30 dark:bg-black/40"></div>
+        <div class="mx-auto max-w-7xl pt-32 pb-64 ">
+            <div class="mx-auto max-w-5xl px-8 sm:px-16">
+                <div class="flex flex-col gap-8">
+                    <h1 class="text-5xl sm:text-7xl font-semibold tracking-tight text-balance text-orange-500 dark:text-orange-400">{{ .Title }}</h1>
+                    <p class="text-lg sm:text-xl/8 font-medium text-pretty text-blue-500/80 dark:text-blue-400">{{ site.Params.subtitle }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="-mt-45" x-data="{ rotations: ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2'] }">
+        <div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
+            <template x-for="idx in [0, 1, 2, 3, 4]" :key="idx">
+                <div class="relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-neutral-100 sm:w-72 sm:rounded-2xl dark:bg-neutral-800 " :class="rotations[idx % rotations.length]">
+                    <img :src="`/images/homepage/img_${idx}.avif`" alt="" class="object-cover w-full h-full" />
+                </div>
+            </template>
+        </div>
+    </div>
+</section>
+<section class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-16 mt-16">
+    <div class="pt-16 px-4 sm:px-8">
+    {{ $sections := slice "diary" "tech" "notes" }}
+    {{ $allPages := slice }}
+    {{ range $sections }}
+        {{ $allPages = $allPages | append (where site.RegularPages "Section" .) }}
+    {{ end }}
+    {{ $sortedPages := sort $allPages "Date" "desc" }}
+        <div class="md:border-l-2 md:border-black/10 dark:md:border-white/10 md:pl-8 lg:pl-12">
+            <div class="flex flex-col max-w-3xl space-y-16">
+            {{ range first 5 $sortedPages }}
+                {{ partial "list-article-card" . }}
+            {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

@@ -1,0 +1,17 @@
+{
+  "name": "my-blog",
+  "version": "1.0.0",
+  "description": "My Hugo Blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx @tailwindcss/cli -i assets/main.css -o static/css/main.min.css --watch",
+    "build": "npx @tailwindcss/cli -i assets/main.css -o static/css/main.min.css --minify"
+  },
+  "author": "SJTUYoimiya",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "@tailwindcss/typography": "^0.5.16",
+    "tailwindcss": "^4.1.12"
+  }
+}

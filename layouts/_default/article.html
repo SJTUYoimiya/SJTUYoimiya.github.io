@@ -1,0 +1,52 @@
+{{ define "main" }}
+<section class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-16 mt-16">
+    <div class="pt-16 px-4 sm:px-8">
+        <article class="mx-auto max-w-3xl">
+            <header class="flex flex-col">
+                <h1 class="my-6 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">{{ .Title }}</h1>
+                <p class="w-full order-first flex items-center gap-4 text-base font-bold text-gray-600 dark:text-gray-500">
+                    <span class="h-4 w-0.5 rounded-full bg-gray-600 dark:bg-gray-500"></span>
+                    <span class="flex gap-2 items-baseline justify-center">
+                        <time datetime='{{ .Date.Format "2006-01-02" }}'>{{ .Date | dateFormat "2006-01-02" }}</time>
+                        <span>&middot;</span>
+                        <span>{{ index site.Data.categories .Params.categories }}</span>
+                    </span>
+                </p>
+                <p class="flex items-center gap-4">
+                    <span class="inline-flex items-center gap-x-1.5 rounded-md px-1.5 py-0.5 text-sm/5 font-medium sm:text-xs/5 forced-colors:outline bg-blue-500/15 text-blue-700 group-data-hover:bg-blue-500/25 dark:text-blue-400 dark:group-data-hover:bg-blue-500/25">
+                        <i class="fa-regular fa-clock"></i>
+                        {{ $wordsPerMin := 200.0 }}
+                        {{ $readingTime := div .WordCount $wordsPerMin }}
+                        {{ if lt $readingTime 1 }}
+                            <span aria-label="阅读时间小于1分钟">&lt;1 min</span>
+                        {{ else }}
+                            <span aria-label='预计阅读时间 {{ printf "%.0f" $readingTime }} 分钟'>
+                                {{ printf "%.0f min" $readingTime }}
+                            </span>
+                        {{ end }}
+                    </span>
+                    {{ with .Params.tags }}
+                        <span aria-hidden="true" class="relative z-30 flex items-center text-sm font-medium gap-2">
+                        {{ range . }}
+                            <a href='{{ "/tags/" | relURL }}{{ . | urlize }}'
+                                x-data="{ hover: false }"
+                                @mouseenter="hover = true" 
+                                @mouseleave="hover = false"
+                                :data-hover="hover"
+                                class="group relative inline-flex rounded-md focus:outline-hidden data-focus:outline-2 data-focus:outline-offset-2 data-focus:outline-blue-500">
+                                <span 
+                                    class="inline-flex items-center gap-x-1.5 rounded-md px-1.5 py-0.5 text-sm/5 font-medium sm:text-xs/5 forced-colors:outline
+                                    bg-teal-500/15 text-teal-700 group-data-hover:bg-teal-500/25 dark:bg-teal-500/10 dark:text-teal-300 dark:group-data-hover:bg-teal-500/20">{{ . }}</span>
+                            </a>
+                        {{ end }}
+                        </span>
+                    {{ end }}
+                </p>
+            </header>
+            <div class="mt-8 max-w-2xl prose dark:prose-invert">
+                {{ .Content }}
+            </div>
+        </article>
+    </div>
+</section>
+{{ end }}

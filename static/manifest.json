@@ -1,0 +1,15 @@
+{
+    "name": "五洲湖底",
+    "short_name": "五洲湖底",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#F2F2F7",
+    "theme_color": "#F2F2F7",
+    "icons": [
+        {
+        "src": "/images/favicon.ico",
+        "type": "image/x-icon",
+        "sizes": "16x16 32x32 64x64 128x128 256x256"
+        }
+    ]
+}

@@ -1,0 +1,97 @@
+<header x-data="{ mobileMenuOpen: false }">
+    <div class="fixed z-50 top-0 left-0 w-full pt-4 px-4 sm:px-8 lg:px-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-8 flex gap-4 text-gray-800 dark:text-gray-200">
+            <div class="flex flex-1">
+                <a href="/" class="-m-1.5 p-1.5">
+                    <span class="sr-only">{{ .Title }}</span>
+                    <span class="size-10 overflow-hidden flex justify-center items-center rounded-full backdrop-blur-sm backdrop-saturate-150 shadow-lg shadow-black/10" :class="mobileMenuOpen ? 'bg-zinc-50/70 dark:bg-transparent' : ''">
+                        <img src="{{ site.Params.favicon }}" alt="Favicon" class="size-8" />
+                    </span>
+                </a>
+            </div>
+            <div class="hidden md:block min-w-xs">
+                <nav class="flex justify-center" x-data="header()">
+                    <div class="rounded-full backdrop-blur-sm backdrop-saturate-150 shadow-lg shadow-black/10 ring-1 ring-neutral-900/5 bg-white/30 dark:bg-neutral-700/30 dark:ring-white/10">
+                        <ul class="flex text-sm font-medium px-3">
+                        {{ range .Site.Menus.main }}
+                            <li>
+                                <a href="{{ .URL }}" class="relative block px-3 py-2 transition" :class="navLinkClass('{{ .URL }}')">
+                                    <span>{{ .Name }}</span>
+                                    <template x-if="isActive('{{ .URL }}')">
+                                        <span class="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-transparent via-orange-500/40 to-transparent dark:via-orange-400/40"></span>
+                                    </template>
+                                </a>
+                            </li>
+                        {{ end }}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="flex flex-1 justify-end">
+                <div class="hidden md:block">
+                    <div class="rounded-full backdrop-blur-sm backdrop-saturate-150 shadow-lg shadow-black/10 ring-1 ring-neutral-900/5 bg-white/30 dark:bg-neutral-700/30 dark:ring-white/10">
+                        <div class="size-10 flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="block md:hidden">
+                    <button class="rounded-full backdrop-blur-sm backdrop-saturate-150 shadow-lg shadow-black/10 ring-1 ring-neutral-900/5 bg-white/30 dark:bg-neutral-700/30 dark:ring-white/10" :class="mobileMenuOpen ? 'bg-zinc-50/70 dark:bg-zinc-800/70' : ''" @click="mobileMenuOpen = !mobileMenuOpen">
+                        <div class="flex gap-3 text-sm font-medium px-4 py-2">
+                            <span class="block">Menu</span>
+                            <span class="block text-xl flex justify-center items-center">
+                                <i class="fa-regular" :class="mobileMenuOpen ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <template x-if="mobileMenuOpen">
+        <div class="text-base font-semibold md:hidden">
+            <div class="fixed z-30 inset-0 bg-black/30" @click="mobileMenuOpen = false"></div>
+            <div class="fixed z-40 pt-2 sm:pt-4 px-6 sm:px-14 w-full">
+                <div class="rounded-2xl backdrop-blur-sm backdrop-saturate-150 shadow-lg shadow-black/10 ring-1 ring-neutral-900/5 bg-zinc-50/70 dark:bg-zinc-800/70 dark:ring-white/10">
+                    <div class="p-6">
+                        <nav class="pb-4">
+                            <ul class="flex flex-col gap-4">
+                            {{ range site.Menus.main }}
+                                <li>
+                                    <a href="{{ .URL }}" class="block transition">{{ .Name }}</a>
+                                </li>
+                            {{ end }}
+                            </ul>
+                        </nav>
+                        <hr role="presentation" class="w-full border-t border-zinc-950/5 dark:border-white/5 border-zinc-950/10 dark:border-white/10" />
+                        <div class="pt-4 text-zinc-600 dark:text-zinc-400">
+                            {{ partial "searchbox.html" }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</header>
+
+<script>
+function header() {
+    const current = window.location.pathname.endsWith('/')
+        ? window.location.pathname
+        : window.location.pathname + '/';
+
+    return {
+        isHomePage: current === '/',
+        currentPath: current,
+        isActive(href) {
+            if (!href.endsWith('/')) href += '/';
+            return href === '/' ? this.currentPath === '/' : this.currentPath.startsWith(href);
+        },
+        navLinkClass(href) {
+            return this.isActive(href)
+                ? 'text-orange-500 dark:text-orange-400'
+                : 'hover:text-orange-500 dark:hover:text-orange-400';
+        },
+    }
+}
+</script>

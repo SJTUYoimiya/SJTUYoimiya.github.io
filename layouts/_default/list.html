@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="max-w-6xl mx-auto px-4 sm:px-8 lg:px-16 mt-16">
+    <div class="pt-16 px-4 sm:px-8">
+        <div class="md:border-l-2 md:border-black/10 dark:md:border-white/10 md:pl-8 lg:pl-12">
+            <div class="flex flex-col max-w-3xl space-y-16">
+            {{ $tweets := .Pages }}
+            {{ range $tweets }}
+                {{ partial "list-article-card" . }}
+            {{ end }}
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}

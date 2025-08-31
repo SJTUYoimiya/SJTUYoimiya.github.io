@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.LanguageCode }}" class="h-full antialiased">
+<head>
+    {{ template "_internal/googleAnalytics.html" . }}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ site.Title }}</title>
+
+    <meta name="description" content="{{ site.Params.description }}">
+    <meta name="author" content="{{ site.Params.author.name }}">
+    <link rel="canonical" href="{{ .Permalink }}" />
+
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:description" content="{{ site.Params.description }}" />
+    <meta property="og:type" content="website" />
+
+    <link rel="icon" href="{{ site.Params.favicon }}" type="image/x-icon">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="{{ .Title }}" />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.ico" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000" />
+
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme') || 'system';
+                var m = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var d = (t === 'dark') || (t === 'system' && m);
+                if (d) document.documentElement.classList.add('dark');
+                document.documentElement.setAttribute('data-theme-mode', t);
+
+                var s = document.createElement('style');
+                s.innerHTML = '.theme-changing * { transition: none !important }';
+                document.head.appendChild(s);
+            } catch (e) {}
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/css/main.min.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {{ block "head" . }}{{ end }}
+</head>
+<body class="h-full bg-neutral-50 dark:bg-neutral-950 text-black dark:text-white">
+    <div class="fixed -z-10 inset-0 flex justify-center px-4 sm:px-8">
+        <div class="flex w-full max-w-6xl lg:mx-8">
+            <div class="w-full bg-white dark:bg-neutral-900 ring-2 ring-neutral-100 dark:ring-neutral-800/50"></div>
+        </div>
+    </div>
+    {{ partial "header.html" . }}
+    <main class="w-full min-h-full">
+        {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "footer.html" . }}
+</body>
+</html>

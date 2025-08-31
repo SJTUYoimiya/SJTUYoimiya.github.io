@@ -1,0 +1,41 @@
+<article class="md:grid md:grid-cols-4 md:items-baseline">
+    <div class="md:col-span-3 group relative flex flex-col items-start">
+        <h2 class="text-xl font-semibold tracking-tight">
+            <div class="absolute z-0 -inset-x-6 -inset-y-6 rounded-3xl bg-neutral-100/30 dark:bg-neutral-800/30
+                transition scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100
+                group-hover:shadow-md"></div>
+            <a href="{{ .Permalink }}">
+                <span class="absolute -inset-x-6 -inset-y-6 z-20 rounded-3xl"></span>
+                <span class="relative z-10">{{ .Title }}</span>
+            </a>
+        </h2>
+        <p class="md:hidden relative z-10 w-full order-first mb-3
+            flex items-center gap-4 
+            text-sm/4 font-bold text-gray-500">
+            <span class="h-3.5 w-0.5 rounded-full bg-gray-500"></span>
+            <time datetime='{{ .Date.Format "2006-01-02" }}' class="">{{ .Date.Format "2006-01-02" }}</time>
+        </p>
+        {{ with .Params.tags }}
+            <div aria-hidden="true" class="relative z-30 mt-4 flex items-center text-sm font-medium gap-2">
+            {{ range . }}
+                <a href='{{ "/tags/" | relURL }}{{ . | urlize }}'
+                    x-data="{ hover: false }"
+                    @mouseenter="hover = true" 
+                    @mouseleave="hover = false"
+                    :data-hover="hover"
+                    class="group relative inline-flex rounded-md focus:outline-hidden data-focus:outline-2 data-focus:outline-offset-2 data-focus:outline-blue-500">
+                    <span 
+                        class="inline-flex items-center gap-x-1.5 rounded-md px-1.5 py-0.5 text-sm/5 font-medium sm:text-xs/5 forced-colors:outline
+                        bg-teal-500/15 text-teal-700 group-data-hover:bg-teal-500/25 dark:bg-teal-500/10 dark:text-teal-300 dark:group-data-hover:bg-teal-500/20">{{ . }}</span>
+                </a>
+            {{ end }}
+            </div>
+        {{ end }}
+        <div
+            aria-hidden="true"
+            class="relative z-10 mt-4 flex items-center justify-center gap-1 text-sm font-medium text-blue-500">
+            <span>阅读文章</span><i class="fa-solid fa-angle-right"></i>
+        </div>
+    </div>
+    <time datetime='{{ .Date.Format "2006-01-02" }}' class="mt-1 hidden md:block relative z-10 order-first mb-3 text-sm text-gray-600 dark:text-gray-500 pl-3.5">{{ .Date.Format "2006.01.02" }}</time>
+</article>
