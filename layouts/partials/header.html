@@ -39,7 +39,7 @@
                     <button class="rounded-full backdrop-blur-sm backdrop-saturate-150 shadow-lg shadow-black/10 ring-1 ring-neutral-900/5 bg-white/30 dark:bg-neutral-700/30 dark:ring-white/10" :class="mobileMenuOpen ? 'bg-zinc-50/70 dark:bg-zinc-800/70' : ''" @click="mobileMenuOpen = !mobileMenuOpen">
                         <div class="flex gap-3 text-sm font-medium px-4 py-2">
                             <span class="block">Menu</span>
-                            <span class="block text-xl flex justify-center items-center">
+                            <span class="text-xl flex justify-center items-center">
                                 <i class="fa-regular" :class="mobileMenuOpen ? 'fa-circle-chevron-up' : 'fa-circle-chevron-down'"></i>
                             </span>
                         </div>
@@ -51,7 +51,7 @@
     <template x-if="mobileMenuOpen">
         <div class="text-base font-semibold md:hidden">
             <div class="fixed z-30 inset-0 bg-black/30" @click="mobileMenuOpen = false"></div>
-            <div class="fixed z-40 pt-2 sm:pt-4 px-6 sm:px-14 w-full">
+            <div class="fixed z-40 mt-16 pt-2 sm:pt-4 px-6 sm:px-14 w-full">
                 <div class="rounded-2xl backdrop-blur-sm backdrop-saturate-150 shadow-lg shadow-black/10 ring-1 ring-neutral-900/5 bg-zinc-50/70 dark:bg-zinc-800/70 dark:ring-white/10">
                     <div class="p-6">
                         <nav class="pb-4">
@@ -63,7 +63,7 @@
                             {{ end }}
                             </ul>
                         </nav>
-                        <hr role="presentation" class="w-full border-t border-zinc-950/5 dark:border-white/5 border-zinc-950/10 dark:border-white/10" />
+                        <hr role="presentation" class="w-full border-t border-zinc-950/10 dark:border-white/10" />
                         <div class="pt-4 text-zinc-600 dark:text-zinc-400">
                             {{ partial "searchbox.html" }}
                         </div>

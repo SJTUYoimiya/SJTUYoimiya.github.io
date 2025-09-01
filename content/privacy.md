@@ -3,7 +3,7 @@ title: "隐私政策"
 layout: "single"
 ---
 
-> 最近更新：2025-05-14
+> 最近更新：2025-09-01
 > 
 > 生效日期：2025-05-14
 
@@ -26,9 +26,12 @@ layout: "single"
 
 本站可能使用以下第三方服务，具体服务条款和隐私政策请参阅相应链接：
 
-- **托管服务**：GitHub Pages
-- **字体和图标**：Font Awesome、MathJax、Highlight.js
-- **网站统计分析**：Google Analytics
+- **GitHub Pages**：本站托管于 GitHub Pages，访问日志可能包含您的 IP 地址、浏览器信息和访问时间。这些数据由 GitHub 维护，详见 GitHub 隐私声明。
+- **Google Analytics**：本站使用 Google Analytics 统计访问情况。Google Analytics 可能会收集您的浏览器类型、访问页面、停留时间等匿名信息。相关数据由 Google 处理，详见 Google 隐私政策。
+- **FontAwesome**：本站使用 FontAwesome 图标库，若从官方 CDN 加载图标，访问时可能会被记录请求信息。详见 FontAwesome 隐私政策。
+- **Tailwind CSS / Alpine.js / Tailwind Plus**：这些前端框架仅用于页面样式与交互，不会收集任何用户数据。
+
+本站不会将上述信息用于商业目的。
 
 ### 四、信息安全保护
 
