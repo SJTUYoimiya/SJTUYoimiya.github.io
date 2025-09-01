@@ -52,12 +52,3 @@ layout: "single"
 博主是上海交通大学 2021 级本科生、2025 级硕士研究生，本硕均就读于数学科学科学院，研究方向为深度学习的理论与应用、AI4Sci 等。截至完成此文，博主正处于大四的最后一个月。博主自知没有什么学术追求，毕业后目标的就业方向主要是算法类，当然，具体的垂直领域方向还需要进一步根据科研与实习进度来决定。
 
 在日常生活中，博主并没有特别突出的爱好，关注的事情也比较杂。博主的主要爱好是日常~~街溜子~~闲逛、摄影，对博主来说，思考构图与调色的时候是为数不多可以从学习与就业的压力中脱离出来的时刻。当然，博主并没有很高超的摄影技术，主要是将它作为放松、休息的媒介与激励自己出门的手段。博主目前持有一台 NIKON Z 30 微单，主要摄影题材为自然风光与城市建筑，活动区域为上海市及周边地区。博主目前在玩的游戏主要是《崩坏·星穹铁道》，同时也会不定期回坑《原神》与《城市天际线》，博主并不是一个热爱游戏的人，玩游戏也是权当消遣，更像是在追更番剧而非游戏竞技。
-
-### 联系博主
-
-如有任何问题、建议或交流想法，欢迎通过以下方式联系我：
-
-- <i class="fa-regular fa-envelope"></i> 邮箱：[GMail](mailto:sjtuwzh@gmail.com)、[SJTU](mailto:wangzihe@sjtu.edu.cn)
-- <i class="fa-brands fa-github"></i> GitHub: [SJTUYoimiya](https://github.com/SJTUYoimiya)
-- <i class="fa-brands fa-bilibili"></i> 哔哩哔哩：[山野雾灯ovo](https://space.bilibili.com/476623878)
-- 水源社区：[选举型高松灯 | Yoimiya](https://shuiyuan.sjtu.edu.cn/u/yoimiya/summary)
