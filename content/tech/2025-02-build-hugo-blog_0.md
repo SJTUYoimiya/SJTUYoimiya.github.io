@@ -116,6 +116,13 @@ npx @tailwindcss/cli -i ./assets/css/main.css -o ./static/css/main.min.css --wat
 ```shell
 npx @tailwindcss/cli -i ./assets/css/main.css -o ./static/css/main.min.css --minify
 ```
+## 安装 Alpine.js
+
+Alpine.js 的安装比较简单，直接用 CDN 导入即可，在 HTML 模板的 head 中加入以下内容：
+
+```html
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+```
 
 ## 托管到 Github Page
 
@@ -164,7 +171,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: latest
+      HUGO_VERSION: v0.145.0+extended+withdeploy
       HUGO_ENVIRONMENT: production
       TZ: Asia/Shanghai
 
@@ -177,7 +184,7 @@ jobs:
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
       with:
-        hugo-version: latest
+        hugo-version: 0.145.0
         extended: true
       
     - name: Build the website
@@ -199,6 +206,9 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 ```
+
+
+> **注意**：为保证编译正常，最好确保 GitHub Actions 中的 `HUGO_VERSION` 与本地安装的 Hugo 版本一致。
 
 这将在每次推送到 GitHub 后，自动配置环境、构造站点并部署到 GitHub Page 上。
 
