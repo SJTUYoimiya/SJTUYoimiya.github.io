@@ -1,7 +1,11 @@
 {{ define "main" }}
 <section class="w-full bg-transparent">
     <div class="relative isolate overflow-hidden">
-        <img src="/images/homepage/banner.webp" alt="" class="absolute inset-0 -z-10 size-full object-cover">
+        <picture>
+            <source srcset="/images/homepage/bg-hero.avif" type="image/avif" media="(min-width: 640px)"/>
+            <source srcset="/images/homepage/bg-hero@sm.avif" type="image/avif" media="(max-width: 639px)"/>
+            <img src="/images/homepage/bg-hero.avif" alt="" class="absolute inset-0 -z-10 size-full object-cover">
+        </picture>
         <div class="absolute inset-0 -z-10 block bg-white/30 dark:bg-black/40"></div>
         <div class="mx-auto max-w-7xl pt-32 pb-32 sm:pt-40 sm:pb-64">
             <div class="mx-auto max-w-5xl px-8 sm:px-16">
@@ -12,11 +16,17 @@
             </div>
         </div>
     </div>
-    <div class="-mt-25 sm:-mt-45" x-data="{ rotations: ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2'] }">
+    <div class="-mt-25 sm:-mt-45 h-56 sm:h-88" x-data="{ rotations: ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2'] }">
         <div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-            <template x-for="idx in [0, 1, 2, 3, 4]" :key="idx">
-                <div class="relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-neutral-100 sm:w-72 sm:rounded-2xl dark:bg-neutral-800 " :class="rotations[idx % rotations.length]">
-                    <img :src="`/images/homepage/img_${idx}.avif`" alt="" class="object-cover w-full h-full" />
+            <template x-for="idx in [0,1,2,3,4]" :key="idx">
+                <div class="relative aspect-9/10 w-48 flex-none overflow-hidden rounded-xl bg-neutral-100 sm:w-72 sm:rounded-2xl dark:bg-neutral-800 " :class="rotations[idx % rotations.length]">
+                    <picture>
+                        <source :srcset="`/images/homepage/img-${idx}.avif`" type="image/avif" media="(min-width: 640px)"/>
+                        <template x-if="!(idx === 0 || idx === 4)">
+                            <source :srcset="`/images/homepage/img-${idx}@sm.avif`" type="image/avif" media="(max-width: 639px)"/>
+                        </template>
+                        <img src="" alt="" class="h-full w-full object-cover">
+                    </picture>
                 </div>
             </template>
         </div>

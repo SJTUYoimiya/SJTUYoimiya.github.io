@@ -1,9 +1,9 @@
 <footer class="mt-16 px-4 pt-8 sm:px-8 lg:px-16 text-sm/6">
-    <div class="mx-auto max-w-6xl py-8 px-4 sm:px-8">
+    <div class="mx-auto max-w-6xl py-8 px-4 sm:px-8 text-gray-600 dark:text-gray-400">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-            <div class="space-y-8 text-gray-600 dark:text-gray-500">
-                <img class="size-9" src="{{ site.Params.favicon }}" alt="{{ .Title }}">
-                <p class="text-balance font-semibold text-orange-600 dark:text-orange-400">{{ site.Params.subtitle }}</p>
+            <div class="space-y-8">
+                <img class="size-9" src="images/homepage/icon@64x64.png" alt="{{ .Title }}">
+                <p class="text-balance font-semibold text-orange-700 dark:text-orange-400">{{ site.Params.subtitle }}</p>
                 <div class="flex gap-x-6 text-xl">
                     <a href="{{ site.Params.author.github }}" 
                         class="hover:text-gray-800 dark:hover:text-gray-300">
@@ -31,7 +31,7 @@
                 <div class="md:grid md:grid-cols-2 md:gap-8">
                     <div>
                         <p class="text-base font-semibold">站点导航</p>
-                        <ul role="list" class="mt-6 space-y-4 text-gray-600 dark:text-gray-500">
+                        <ul role="list" class="mt-6 space-y-4">
                         {{ range site.Menus.main }}
                             <li>
                                 <a href="{{ .URL }}" class="hover:text-black dark:hover:text-white">
@@ -48,7 +48,7 @@
                     </div>
                     <div class="mt-10 md:mt-0">
                         <p class="text-base font-semibold">快速链接</p>
-                        <ul role="list" class="mt-6 space-y-4 text-gray-600 dark:text-gray-500">
+                        <ul role="list" class="mt-6 space-y-4">
                             <li>
                                 <a href="/about" class="hover:text-black dark:hover:text-white">关于本站</a>
                             </li>
@@ -64,7 +64,7 @@
                 <div class="md:grid md:grid-cols-2 md:gap-8">
                     <div>
                         <p class="text-base font-semibold">法律信息</p>
-                        <ul role="list" class="mt-6 space-y-4 text-gray-600 dark:text-gray-500">
+                        <ul role="list" class="mt-6 space-y-4">
                             <li>
                                 <a href="/privacy" class="hover:text-black dark:hover:text-white">隐私政策</a>
                             </li>
@@ -79,8 +79,8 @@
                 </div>
             </div>
         </div>
-        <div class="mt-16 border-t border-black/10 dark:border-white/10 pt-8 md:flex md:items-center md:justify-between text-gray-600 dark:text-gray-500">
-            <p>Copyright &copy; 2022-{{ now.Year }} <span class="text-orange-600 dark:text-orange-400">{{ site.Params.author.name }}</span>. All rights reserved.</p>
+        <div class="mt-16 border-t border-black/10 dark:border-white/10 pt-8 md:flex md:items-center md:justify-between">
+            <p>Copyright &copy; 2022-{{ now.Year }} <span class="text-orange-700 dark:text-orange-400">{{ site.Params.author.name }}</span>. All rights reserved.</p>
             <p>Powered by <a href="https://gohugo.io" class="text-blue-600 dark:text-blue-500 hover:opacity-80">Hugo</a> & <a href="https://pages.github.com" class="text-blue-600 dark:text-blue-500 hover:opacity-80">GitHub Page</a>.</p>
         </div>
     </div>

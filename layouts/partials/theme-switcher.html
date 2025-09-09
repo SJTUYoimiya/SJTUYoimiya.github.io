@@ -1,23 +1,23 @@
 <div class="shrink-0" role="group" aria-label="主题模式切换" x-data="themeSwitcher()">
-    <div class="text-xs/4 rounded-full inline-flex p-px border-1 border-blue-500">
+    <div class="text-xs/4 rounded-full inline-flex p-px border-1 border-blue-600 dark:border-blue-500">
         <button 
             class="border-1 rounded-full py-px px-1.5 border-transparent text-blue-600 dark:text-blue-500"
-            :class="currentTheme === 'light' ? 'bg-blue-500 text-white' : ''"
+            :class="currentTheme === 'light' ? 'bg-blue-600 text-white' : ''"
             @click="setTheme('light')"
             aria-label="切换到浅色模式"
             :aria-pressed="currentTheme === 'light'"
         >浅色</button>
         <button
             class="border-1 rounded-full py-px px-1.5 border-transparent text-blue-600 dark:text-blue-500"
-            :class="currentTheme === 'dark' ? 'bg-blue-500 dark:text-white' : ''"
+            :class="currentTheme === 'dark' ? 'bg-blue-600 dark:text-white' : ''"
             @click="setTheme('dark')"
             aria-label="切换到深色模式"
             :aria-pressed="currentTheme === 'dark'"
         >深色</button>
         <button 
             class="border-1 rounded-full py-px px-1.5 border-transparent text-blue-600 dark:text-blue-500"
-            :class="currentTheme === 'system' ? 'bg-blue-500 text-white dark:text-white' : ''"
-            @click="setTheme('system')"r
+            :class="currentTheme === 'system' ? 'bg-blue-600 text-white dark:text-white' : ''"
+            @click="setTheme('system')"
             aria-label="使用系统主题"
             :aria-pressed="currentTheme === 'system'"
         >系统</button>
