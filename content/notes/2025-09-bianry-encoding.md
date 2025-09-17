@@ -70,7 +70,7 @@ list(x.to_bytes(4, 'big', signed=True))
 浮点数的二进制表示相对复杂，通常采用 IEEE 754 标准。该标准用二进制下的科学技术法表示浮点数，形式为
 
 $$
-x = (-1)^s \times ( 1 + m ) \times 2^{e - bias}
+x = (-1)^s \times ( 1 + m ) \times 2^{e - \text{bias}}
 $$
 
 其中
