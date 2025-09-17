@@ -2,7 +2,7 @@
     <div class="mx-auto max-w-6xl py-8 px-4 sm:px-8 text-gray-600 dark:text-gray-400">
         <div class="xl:grid xl:grid-cols-3 xl:gap-8">
             <div class="space-y-8">
-                <img class="size-9" src="images/homepage/icon@64x64.png" alt="{{ .Title }}">
+                <img class="size-9" src='{{ "images/favicon@64x64.png" | relURL }}' alt="{{ site.Title }}">
                 <p class="text-balance font-semibold text-orange-700 dark:text-orange-400">{{ site.Params.subtitle }}</p>
                 <div class="flex gap-x-6 text-xl">
                     <a href="{{ site.Params.author.github }}" 
