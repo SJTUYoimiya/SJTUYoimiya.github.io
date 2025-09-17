@@ -47,7 +47,11 @@ markup:
     renderer: 
       unsafe: true
   highlight:
-      noClasses: false
+      codeFences: true
+      guessSyntax: false
+      lineNos: true
+      lineNumbersInTable: false
+      style: "onedark"
 
 params:
   description: "SJTUYoimiya's personal homepage"
